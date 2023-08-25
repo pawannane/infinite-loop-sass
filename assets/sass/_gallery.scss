@@ -15,7 +15,13 @@
   
   &__list {
     margin-top: 105px;
-    @include flex(space-between);
+    @include flex(center);
+    overflow-x: hidden;
+
+    & li { 
+      margin-right: 2.5%;
+      &:last-child { margin: 0; }
+    }
   }
 
   &__slider {
@@ -45,6 +51,24 @@
     @include responsive-reverse(map-get($devices, tablet)) {
       &__slider a:hover {
         color: map-get($map: $colors, $key: blue);
+      }
+    }
+
+    @include responsive(map-get($devices, ipad)) {
+      &__list li { @include shortFlex(33.3%); }
+    }
+
+    @include responsive(map-get($devices, XlargePhone)) {
+      .gallery-section { padding: 50px 0; }
+
+      &__info {
+        padding: 0 5%;
+        margin-top: 20px;
+      }
+
+      &__list { 
+        margin-top: 20px;
+        & li { @include shortFlex(100%); }
       }
     }
   }

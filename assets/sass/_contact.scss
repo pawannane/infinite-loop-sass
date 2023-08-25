@@ -11,10 +11,11 @@
 
 .contact-section {
   @include position(relative);
+  &__banner-img img { @include img(100%, 120vh, cover); }
 
   &__container {
     width: 100%;
-    @include position(absolute, 1, 83px);
+    @include position(absolute, 1, 85px);
 
     & .wrapper {
       max-width: 1154px;
@@ -125,6 +126,33 @@
 
       &__social-links a:hover{
         color: map-get($map: $colors, $key: darkBlue);
+      }
+    }
+
+    @include responsive(map-get($devices, ipad)) {
+      &__banner-img img { @include img(100%, 155vh, cover); }
+      &__bottom { @include flex($direction: column); }
+
+      &__form { 
+        width: 100%; 
+        margin: 0 0 30px 0;
+      }
+    }
+
+    @include responsive(map-get($devices, XlargePhone)) {
+      &__container { @include position($top: 50px); }
+
+      &__info {
+        margin-top: 20px;
+        font-size: 16px;
+      }
+
+      &__bottom { margin-top: 25px; }
+      %input, &__submit-btn { @include font(16px); }
+
+      &__social-links {
+        & li { margin-bottom: 20px; }
+        & a, & .location { @include font(14px); }
       }
     }
   }

@@ -80,7 +80,7 @@
 }
 
 // mixin for img tag
-@mixin img($width, $height:auto, $objFit) {
+@mixin img($width, $height:auto, $objFit: cover) {
   width: $width;
   height: $height;
   -o-object-fit: $objFit;
@@ -156,4 +156,8 @@
     background-color: map-get($map: $colors, $key: lightWhite);
     color: map-get($map: $colors, $key: darkBlue);
   }
+}
+
+@include responsive(map-get($devices, XlargePhone)) {
+  .main-heading, .sub-heading { font-size: 30px; }
 }

@@ -5,5 +5,12 @@
     @include position(absolute, $left: 50%);
     @include transform(translateX(-50%));
     color: map-get($map: $colors, $key: white);
+    text-align: center;
+  }
+
+  @at-root {
+    @include responsive(map-get($devices, XlargePhone)) {
+      .footer-section { @include position($bottom: 70px); }
+    }
   }
 }

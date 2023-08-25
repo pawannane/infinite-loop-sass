@@ -82,10 +82,6 @@
     text-transform: capitalize;
   }
 
-  &__heading + &__info {
-    margin-top: 48px;
-  }
-
   @at-root {
     @include responsive-reverse(map-get($devices, tablet)) {
       &__info .link:hover { color: map-get($map: $colors, $key: lightWhite); }
@@ -93,6 +89,19 @@
 
     @include responsive(map-get($devices, ipad)) {
       &__list li { @include shortFlex(100%); }
+    }
+
+    @include responsive(map-get($devices, XlargePhone)) {
+      .whatWeDo-section { padding: 50px 0; }
+
+      &__info { 
+        margin-top: 20px;
+        font-size: 16px; 
+      }
+
+      &__list li { margin-top: 40px; }
+      &__heading { font-size: 18px; }
+      &__content .btn { margin-top: 20px; }
     }
   }
 }

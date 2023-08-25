@@ -36,6 +36,11 @@
     color: #345679;
   }
 }
+@media only screen and (max-width: 560px) {
+  .main-heading, .sub-heading {
+    font-size: 30px;
+  }
+}
 /* ==========================================================================
    1. CSS Reset Code
    ========================================================================== */
@@ -151,6 +156,7 @@ section {
 /* Force scrollbar */
 html {
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 /* Align radios and text inputs with their label */
@@ -466,6 +472,24 @@ li {
     color: #345679;
   }
 }
+@media only screen and (max-width: 560px) {
+  .banner-section__container {
+    top: 20%;
+  }
+  .banner-section__banner-img img {
+    width: 100%;
+    height: 100vh;
+    -o-object-fit: cover;
+    object-fit: cover;
+    object-position: center;
+  }
+  .banner-section__heading {
+    font-size: 40px;
+  }
+  .banner-section__info {
+    font-size: 16px;
+  }
+}
 
 .whatWeDo-section {
   padding: 118px 0 116px;
@@ -564,9 +588,6 @@ li {
   font-size: 30px;
   text-transform: capitalize;
 }
-.whatWeDo-section__heading + .whatWeDo-section__info {
-  margin-top: 48px;
-}
 @media only screen and (min-width: 995px) {
   .whatWeDo-section__info .link:hover {
     color: #D7DCDE;
@@ -579,13 +600,31 @@ li {
     flex: 0 0 100%;
   }
 }
+@media only screen and (max-width: 560px) {
+  .whatWeDo-section {
+    padding: 50px 0;
+  }
+  .whatWeDo-section__info {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  .whatWeDo-section__list li {
+    margin-top: 40px;
+  }
+  .whatWeDo-section__heading {
+    font-size: 18px;
+  }
+  .whatWeDo-section__content .btn {
+    margin-top: 20px;
+  }
+}
 
 .testimonials-section {
   position: relative;
 }
 .testimonials-section__banner-img img {
   width: 100%;
-  height: 120vh;
+  height: 140vh;
   -o-object-fit: cover;
   object-fit: cover;
   object-position: center;
@@ -621,6 +660,7 @@ li {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  overflow-x: hidden;
 }
 .testimonials-section__slider li {
   margin-right: 4.75%;
@@ -687,6 +727,71 @@ li {
     color: #FAFFF4;
   }
 }
+@media only screen and (max-width: 995px) {
+  .testimonials-section__info {
+    padding: 0 10%;
+  }
+  .testimonials-section__slider {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+  }
+  .testimonials-section__slider li {
+    margin: 0;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .testimonials-section__banner-img img {
+    width: 100%;
+    height: 100vh;
+    -o-object-fit: cover;
+    object-fit: cover;
+    object-position: center;
+  }
+  .testimonials-section__container {
+    padding: 50px 0;
+  }
+  .testimonials-section__info {
+    padding: 0 5%;
+    margin-top: 20px;
+  }
+  .testimonials-section__slider {
+    margin-top: 40px;
+  }
+  .testimonials-section__slider li {
+    padding: 0 4%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+  .testimonials-section__profile-img img {
+    width: 35%;
+    height: auto;
+    -o-object-fit: cover;
+    object-fit: cover;
+    object-position: center;
+  }
+  .testimonials-section__profile-info {
+    margin-top: 30px;
+    font-size: 16px;
+  }
+  .testimonials-section__profile {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  .testimonials-section__radios {
+    margin-top: 40px;
+  }
+}
+
 .gallery-section {
   padding: 132px 0 105px;
 }
@@ -707,9 +812,16 @@ li {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: space-between;
-  justify-content: space-between;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+.gallery-section__list li {
+  margin-right: 2.5%;
+}
+.gallery-section__list li:last-child {
+  margin: 0;
 }
 .gallery-section__slider {
   margin-top: 52px;
@@ -750,6 +862,30 @@ li {
     color: #3F8AC1;
   }
 }
+@media only screen and (max-width: 768px) {
+  .gallery-section__list li {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.3%;
+    flex: 0 0 33.3%;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .gallery-section {
+    padding: 50px 0;
+  }
+  .gallery-section__info {
+    padding: 0 5%;
+    margin-top: 20px;
+  }
+  .gallery-section__list {
+    margin-top: 20px;
+  }
+  .gallery-section__list li {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+}
 
 .contact-section__input-textarea textarea, .contact-section__input-field input {
   width: 100%;
@@ -765,11 +901,18 @@ li {
 .contact-section {
   position: relative;
 }
+.contact-section__banner-img img {
+  width: 100%;
+  height: 120vh;
+  -o-object-fit: cover;
+  object-fit: cover;
+  object-position: center;
+}
 .contact-section__container {
   width: 100%;
   position: absolute;
   z-index: 1;
-  top: 83px;
+  top: 85px;
 }
 .contact-section__container .wrapper {
   max-width: 1154px;
@@ -882,6 +1025,53 @@ li {
     color: #345679;
   }
 }
+@media only screen and (max-width: 768px) {
+  .contact-section__banner-img img {
+    width: 100%;
+    height: 155vh;
+    -o-object-fit: cover;
+    object-fit: cover;
+    object-position: center;
+  }
+  .contact-section__bottom {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+  }
+  .contact-section__form {
+    width: 100%;
+    margin: 0 0 30px 0;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .contact-section__container {
+    top: 50px;
+  }
+  .contact-section__info {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  .contact-section__bottom {
+    margin-top: 25px;
+  }
+  .contact-section__input-field input, .contact-section__input-textarea textarea, .contact-section__submit-btn {
+    font-size: 16px;
+  }
+  .contact-section__social-links li {
+    margin-bottom: 20px;
+  }
+  .contact-section__social-links a, .contact-section__social-links .location {
+    font-size: 14px;
+  }
+}
 
 .footer-section {
   position: relative;
@@ -894,6 +1084,12 @@ li {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   color: #FAFFF4;
+  text-align: center;
+}
+@media only screen and (max-width: 560px) {
+  .footer-section {
+    bottom: 70px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
