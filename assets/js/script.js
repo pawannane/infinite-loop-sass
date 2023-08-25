@@ -1,7 +1,8 @@
 const hamburger = document.querySelector(".header-section__hamburger");
-const navContainer = document.querySelector(".header-section__container");
-const navLink = document.querySelectorAll(".header-section__container a");
+const navContainer = document.querySelector(".header-section__navbar");
+const navLink = document.querySelectorAll(".header-section__navbar a");
 const html = document.querySelector("html");
+const submitBtn = document.querySelector(".contact-section__submit-btn");
 
 /************************************ Hamburger logic ***********************************************/
 //add active
@@ -20,3 +21,7 @@ navLink.forEach(e => {
   })
 });
 
+/************************************ Form logic ***********************************************/
+submitBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+});

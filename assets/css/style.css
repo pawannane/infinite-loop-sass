@@ -288,6 +288,11 @@ li {
 }
 .header-section__navbar {
   width: 65%;
+  -webkit-transition: transform 0.3s ease;
+  -moz-transition: transform 0.3s ease;
+  -ms-transition: transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 .header-section__navbar ul {
   width: 100%;
@@ -355,7 +360,7 @@ li {
   .html-scroll {
     overflow-y: hidden;
   }
-  .header-section__navbar .active-nav {
+  .header-section__container .active-nav {
     transform: translateY(0);
   }
   .header-section__hamburger {
@@ -427,7 +432,7 @@ li {
 }
 .banner-section__container {
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   top: 35%;
   left: 50%;
   color: #FAFFF4;

@@ -19,6 +19,8 @@
 
   &__navbar {
     width: 65%;
+    @include transition(transform, .3s, ease);
+    
     & ul { width: 100%; }
 
     & li { 
@@ -71,7 +73,7 @@
 
     @include responsive(map-get($devices, ipad)) {
       .html-scroll { overflow-y: hidden; }
-      &__navbar .active-nav { transform: translateY(0);}
+      &__container .active-nav { transform: translateY(0);}
 
       &__hamburger {
         display: block;

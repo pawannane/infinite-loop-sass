@@ -6,7 +6,7 @@
   }
 
   &__container {
-    @include position(absolute, 1, 35%, $left: 50%);
+    @include position(absolute, 0, 35%, $left: 50%);
     color: map-get($map: $colors, $key: white);
     text-align: center;
     @include transform(translateX(-50%));
