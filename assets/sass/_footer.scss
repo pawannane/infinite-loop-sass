@@ -1,0 +1,9 @@
+.footer-section {
+  @include position(relative, $bottom: 50px);
+
+  &__container {
+    @include position(absolute, $left: 50%);
+    @include transform(translateX(-50%));
+    color: map-get($map: $colors, $key: white);
+  }
+}

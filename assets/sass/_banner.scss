@@ -1,0 +1,50 @@
+.banner-section {
+  @include position(relative);
+
+  &__banner-img img {
+    @include img(100%, 120vh, cover);
+  }
+
+  &__container {
+    @include position(absolute, 1, 35%, $left: 50%);
+    color: map-get($map: $colors, $key: white);
+    text-align: center;
+    @include transform(translateX(-50%));
+
+    & .arrow-down {
+      padding: 19px 13.75%;
+      margin-top: 210px;
+      background-color: map-get($map: $colors, $key: darkBlue);
+      color: map-get($map: $colors, $key: white);
+      @include font(0);
+      @include transition($time: .3s, $func: ease);
+
+      &::before {
+        @include icon("\f063");
+        @include font(42px);
+      }
+    }
+  }
+
+  &__heading {
+    color: map-get($map: $colors, $key: pureWhite);
+    @include font(52px);
+    text-transform: capitalize;
+  }
+
+  &__info {
+    color: map-get($map: $colors, $key: lightWhite);
+    @include font(19px);
+    text-transform: capitalize;
+    &:nth-child(2) { margin: 36px 0 24px; }
+  }
+
+  @at-root {
+    @include responsive-reverse(map-get($devices, tablet)) {
+      &__container .arrow-down:hover {
+        background-color: map-get($map: $colors, $key: white);
+        color: map-get($map: $colors, $key: darkBlue);
+      }
+    }
+  }
+}

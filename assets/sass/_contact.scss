@@ -1,0 +1,131 @@
+%input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 1px solid map-get($map: $colors, $key: white);
+  border-radius: 8px;
+  outline: none;
+  background-color: transparent;
+  color: map-get($map: $colors, $key: white);
+  @include font(20px);
+}
+
+.contact-section {
+  @include position(relative);
+
+  &__container {
+    width: 100%;
+    @include position(absolute, 1, 83px);
+
+    & .wrapper {
+      max-width: 1154px;
+      width: 75.1%;
+    }
+
+    & .sub-heading {
+      text-align: center;
+    }
+  }
+  
+  &__info {
+    margin-top: 48px;
+    color: map-get($map: $colors, $key: lightWhite);
+    @include font(20px);
+    line-height: 1.8;
+    text-align: center;
+  }
+
+  &__bottom {
+    margin-top: 93px;
+    @include flex();
+  }
+
+  &__form {
+    width: 45%;
+    margin-right: 10%;
+  }
+
+  &__input-field input{
+    margin-bottom: 20px;
+    @extend %input;
+  }
+
+  &__input-textarea textarea {
+    margin-bottom: 25px;
+    @extend %input;
+    resize: none;
+  }
+
+  &__submit-btn {
+    padding: 16px 105px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background-color: map-get($map: $colors, $key: darkBlue);
+    color: map-get($map: $colors, $key: white);
+    @include font(19px);
+    text-transform: capitalize;
+    @include transition($time: .3s, $func: ease);
+  }
+
+  &__social-links {
+    & li { 
+      margin-bottom: 65px;
+      display: block; 
+
+      &:last-child { margin-bottom: 0; }
+    }
+
+    & a, & .location { 
+      @include flex($align: center);
+      color: map-get($map: $colors, $key: white);
+      @include font(18px);
+      text-transform: capitalize;
+      @include transition(all, $time: .3s, $func: ease);
+    }
+
+    & .chat {
+      &::before {
+        margin-right: 28px;
+        @include icon("\f4ad");
+        @include font(36px);
+      }
+    }
+
+    & .mail {
+      text-transform: lowercase;
+      &::before {
+        margin-right: 28px;
+        @include icon("\f0e0");
+        @include font(36px);
+      }
+    }
+
+    & .location {
+      &::before {
+        margin-right: 28px;
+        @include icon("\f3c5");
+        @include font(36px);
+      }
+    }
+
+    & .call {
+      &::before {
+        margin-right: 28px;
+        @include icon("\f879");
+        @include font(36px);
+      }
+    }
+  }
+  @at-root {
+    @include responsive-reverse(map-get($devices, tablet)) {
+      &__submit-btn:hover {
+        background-color: map-get($map: $colors, $key: white);
+        color: map-get($map: $colors, $key: darkBlue);
+      }
+
+      &__social-links a:hover{
+        color: map-get($map: $colors, $key: darkBlue);
+      }
+    }
+  }
+}

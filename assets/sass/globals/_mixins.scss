@@ -1,0 +1,159 @@
+// mixin for responsive
+@mixin responsive($value) {
+  @media only screen and (max-width: $value) {
+    @content;
+  }
+}
+
+// mixin for responsive reverse e.g: hover effect
+@mixin responsive-reverse($value) {
+  @media only screen and (min-width: $value) {
+    @content;
+  }
+}
+
+// mixin for icon
+@mixin icon($content, $textIndent:null, $float: null) {
+  font-family: 'FontAwesome';
+
+  @if $textIndent {
+    float: $float;
+    text-indent: 0;
+  }
+
+  content: $content;
+}
+
+// mixin for short hand property of flex: shrink, grow, flex-basis
+@mixin shortFlex($flexBasis) {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 $flexBasis;
+  flex: 0 0 $flexBasis;
+}
+
+// mixin for flex
+@mixin flex($justify:null, $align:null, $direction:null, $wrap:null, $flexOrder:null) {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  @if $align {
+    -webkit-box-align: $align;
+    -moz-box-align: $align;
+    -ms-flex-align: $align;
+    -webkit-align-items: $align;
+    align-items: $align;
+  }
+
+  @if $direction {
+    -webkit-flex-direction: $direction;
+    -moz-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    -o-flex-direction: $direction;
+
+    @if $direction==row {
+      -webkit-box-orient: horizontal;
+    }
+
+    @else {
+      -webkit-box-orient: vertical;
+    }
+
+    flex-direction: $direction;
+  }
+
+  @if $wrap {
+    -webkit-flex-wrap: $wrap;
+    -moz-flex-wrap: $wrap;
+    -ms-flex-wrap: $wrap;
+    -o-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+  }
+
+  @if $justify {
+    -webkit-justify-content: $justify;
+    -ms-flex-pack: $justify;
+    justify-content: $justify;
+  }
+}
+
+// mixin for img tag
+@mixin img($width, $height:auto, $objFit) {
+  width: $width;
+  height: $height;
+  -o-object-fit: $objFit;
+  object-fit: $objFit;
+  object-position: center;
+}
+
+// mixin for transition
+@mixin transition($property:all, $time:null, $func:null) {
+  -webkit-transition: $property $time $func;
+  -moz-transition: $property $time $func;
+  -ms-transition: $property $time $func;
+  -o-transition: $property $time $func;
+  transition: $property $time $func;
+}
+
+// mixin for transform
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+// mixin for position
+@mixin position($position:null, $z-index: null, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  z-index: $z-index ;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// mixin for box sizing
+@mixin boxSizing($property){
+  -webkit-box-sizing:$property;
+  box-sizing: $property;
+}
+
+// mixin for font
+@mixin font($size: null, $weight: null, $family: null) {
+  font-size: $size;
+  font-weight: $weight;
+  font-family: $family;
+}
+
+// common styling 
+.uppercase { text-transform: uppercase; }
+.italic { font-style: italic; }
+
+.main-heading {
+  color: map-get($map: $colors, $key: darkBlue);
+  @include font(42px);
+  text-transform: capitalize;
+}
+
+.sub-heading {
+  color: map-get($map: $colors, $key: white);
+  @include font(42px);
+  text-transform: capitalize;
+}
+
+.btn {
+  padding: 18px 5.75%;
+  background-color: map-get($map: $colors, $key: darkBlue);
+  color: map-get($map: $colors, $key: white);
+  text-transform: capitalize;
+  @include transition($time: .3s, $func: ease);
+}
+
+@include responsive-reverse(map-get($devices, tablet)) {
+  .btn:hover {
+    background-color: map-get($map: $colors, $key: lightWhite);
+    color: map-get($map: $colors, $key: darkBlue);
+  }
+}

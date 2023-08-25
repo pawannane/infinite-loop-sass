@@ -1,0 +1,98 @@
+.whatWeDo-section {
+  padding: 118px 0 116px;
+
+  &__info {
+    margin-top: 50px;
+    color: map-get($map: $colors, $key: gray);
+    @include font(19px);
+    line-height: 2;
+
+    & .link { 
+      color: map-get($map: $colors, $key: blue);
+      @include transition(color, .3s, ease);
+    }
+
+    & .gray-txt { @include font($weight: 700); }
+  }
+
+  &__list {
+    @include flex(space-between, $wrap: wrap);
+
+    & li { 
+      margin-top: 105px;
+      @include shortFlex(49%); 
+      @include flex();
+    }
+
+    & .market {
+      color: map-get($map: $colors, $key: darkBlue);
+      @include font(0);
+
+      &::before {
+        @include icon("\e473");
+        @include font(50px);
+      }
+    }
+
+    & .support {
+      color: map-get($map: $colors, $key: darkBlue);
+      @include font(0);
+
+      &::before {
+        @include icon("\f4ad");
+        @include font(50px);
+      }
+    }
+
+    & .fingerprint {
+      color: map-get($map: $colors, $key: darkBlue);
+      @include font(0);
+
+      &::before {
+        @include icon("\f577");
+        @include font(50px);
+      }
+    }
+
+    & .group {
+      color: map-get($map: $colors, $key: darkBlue);
+      @include font(0);
+
+      &::before {
+        @include icon("\f500");
+        @include font(50px);
+      }
+    }
+  }
+
+  &__content { 
+    margin-left: 6.5%;
+
+    & .btn { margin-top: 48px; }
+
+    & .html-code {
+      display: block;
+      color: map-get($map: $colors, $key: gray);
+    }
+  }
+
+  &__heading {
+    color: map-get($map: $colors, $key: darkBlue);
+    @include font(30px);
+    text-transform: capitalize;
+  }
+
+  &__heading + &__info {
+    margin-top: 48px;
+  }
+
+  @at-root {
+    @include responsive-reverse(map-get($devices, tablet)) {
+      &__info .link:hover { color: map-get($map: $colors, $key: lightWhite); }
+    }
+
+    @include responsive(map-get($devices, ipad)) {
+      &__list li { @include shortFlex(100%); }
+    }
+  }
+}

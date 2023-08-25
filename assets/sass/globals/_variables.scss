@@ -1,0 +1,29 @@
+$colors: (
+  pureWhite: #FEF9FF,
+  white: #FAFFF4,
+  lightWhite: #D7DCDE,
+  gray: #767676,
+  lightGray: #8B7E84,
+  backgroundGray: #DDDDDD,
+  pureBlack: #000,
+  black: #3C3C3C,
+  lightBlack: #515152,
+  yellow: #F3C30F,
+  green: #118947,
+  red: #FF0000,
+  darkBlue: #345679,
+  blue: #3F8AC1
+);
+
+$devices: (
+  largeLaptop: 1440px,
+  mediumLaptop: 1366px,
+  laptop: 1280px,
+  smallLaptop: 1024px,
+  tablet: 995px,
+  ipad: 768px,
+  XlargePhone: 560px,
+  largePhone: 480px,
+  mediumPhone: 375px,
+  smallPhone:320px
+);

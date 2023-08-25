@@ -1,0 +1,90 @@
+.testimonials-section {
+  @include position(relative);
+  &__banner-img img { @include img(100%, 120vh, cover); }
+  
+  &__container {
+    width: 100%;
+    padding: 116px 0 182px;
+    @include position(absolute, 1, 0, $left: 50%);
+    @include transform(translateX(-50%));
+
+    & .sub-heading { text-align: center; }
+  }
+
+  &__info {
+    padding: 0 30%;
+    margin-top: 45px;
+    color: map-get($map: $colors, $key: lightWhite);
+    line-height: 2;
+    text-align: center;
+  }
+
+  &__slider {
+    margin-top: 100px;
+    @include flex(center);
+    & li {
+      margin-right: 4.75%;
+      @include shortFlex(20%);
+      &:last-child { margin-right: 0 };
+    }
+  }
+
+  &__profile-img { 
+    text-align: center;
+
+    & img {
+      @include img(50%, $objFit: cover);
+      border-radius: 50%;
+    }
+  }
+
+  &__profile-info {
+    margin-top: 48px;
+    color: map-get($map: $colors, $key: white);
+    @include font(18px);
+    line-height: 1.8;
+  }
+
+  &__profile {
+    margin-top: 32px;
+    color: map-get($map: $colors, $key: lightWhite);
+    font-style: italic;
+    text-align: end;
+    text-transform: capitalize;
+  }
+
+  &__radios {
+    margin-top: 75px;
+    text-align: center;
+
+    & li { 
+      margin-right: 2.25%;
+      &:last-child { margin-right: 0; }
+    }
+
+    & a {
+      color: map-get($map: $colors, $key: gray);
+      @include font(0);
+      @include transition(color, .3s, ease);
+
+      &::before {
+        @include icon("\f111");
+        @include font(20px);
+      }
+    }
+
+    & .active-radio { color: map-get($map: $colors, $key: white); }
+  }
+
+  @at-root {
+    @include responsive-reverse(map-get($devices, tablet)) {
+      &__radios a:hover {
+        color: map-get($map: $colors, $key: white);
+      }
+    }
+
+    @include responsive(map-get($devices, tablet)) {
+      
+    }
+  }
+}

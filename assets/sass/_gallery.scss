@@ -1,0 +1,51 @@
+.gallery-section {
+  padding: 132px 0 105px;
+  
+  &__container {
+    & .main-heading { text-align: center; }
+  }
+
+  &__info {
+    padding: 0 25%;
+    margin-top: 48px;
+    color: map-get($map: $colors, $key: gray);
+    text-align: center;
+    line-height: 1.8;
+  }
+  
+  &__list {
+    margin-top: 105px;
+    @include flex(space-between);
+  }
+
+  &__slider {
+    margin-top: 52px;
+    @include flex(center);
+
+    & li { 
+      margin-right: 2.5%;
+      &:last-child { margin-right: 0; }
+    }
+
+    & a {
+      color: map-get($map: $colors, $key: gray);
+      @include font(0);
+      @include transition(color, .3s, ease);
+
+      &::before {
+        @include icon("\f111");
+        @include font(20px);
+      }
+    }
+
+    & .active-radio { color: map-get($map: $colors, $key: blue); }
+  }
+
+  @at-root {
+    @include responsive-reverse(map-get($devices, tablet)) {
+      &__slider a:hover {
+        color: map-get($map: $colors, $key: blue);
+      }
+    }
+  }
+}
