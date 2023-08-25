@@ -50,8 +50,8 @@
     @include responsive(map-get($devices, XlargePhone)) {
       &__container { @include position($top: 20%); }
       &__banner-img img { @include img(100%, 100vh, cover); }
-      &__heading { font-size: 40px; }
-      &__info { font-size: 16px; }
+      &__heading { @include font(40px); }
+      &__info { @include font(16px); }
     }
   }
 }

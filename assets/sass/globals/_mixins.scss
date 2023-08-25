@@ -159,5 +159,5 @@
 }
 
 @include responsive(map-get($devices, XlargePhone)) {
-  .main-heading, .sub-heading { font-size: 30px; }
+  .main-heading, .sub-heading { @include font(30px); }
 }
